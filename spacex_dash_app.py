@@ -17,7 +17,7 @@ launch_sites_options = [{'label': site, 'value': site} for site in spacex_df["La
 
 # Create a dash application
 app = dash.Dash(__name__)
-
+server = app.server
 # Create an app layout
 app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
                                         style={'textAlign': 'center', 'color': '#503D36',
@@ -93,4 +93,4 @@ def scatter(entered_site,payload):
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
